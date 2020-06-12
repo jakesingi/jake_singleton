@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Jake Singleton</title>
-    <link>www.jakesingi.github.io/jake_singleton/post/</link>
+    <link>https://jakesingi.github.io/jake_singleton/post/</link>
     <description>Recent content in Projects on Jake Singleton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate>
     
-	<atom:link href="www.jakesingi.github.io/jake_singleton/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jakesingi.github.io/jake_singleton/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Stock Price Analysis Using Time Series!</title>
-      <link>www.jakesingi.github.io/jake_singleton/post/project-1/</link>
+      <link>https://jakesingi.github.io/jake_singleton/post/project-1/</link>
       <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>www.jakesingi.github.io/jake_singleton/post/project-1/</guid>
+      <guid>https://jakesingi.github.io/jake_singleton/post/project-1/</guid>
       <description>Demonstrates data science life cycle in the following steps:
  EDA (visualizations) Transforming the data Removing the trend from the stock price data Fitting an ARIMA model to the residuals Selecting best model by cross validation Making and analyzing predictions.    Link to GitHub Repository</description>
     </item>

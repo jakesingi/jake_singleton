@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Jake Singleton</title>
-    <link>https://jakesingi.github.io/jake_singleton/categories/</link>
+    <link>www.jsingleton.me/categories/</link>
     <description>Recent content in Categories on Jake Singleton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://jakesingi.github.io/jake_singleton/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="www.jsingleton.me/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

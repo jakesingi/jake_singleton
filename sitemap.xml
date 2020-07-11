@@ -4,7 +4,14 @@
   
   <url>
     <loc>https://jakesingi.github.io/jake_singleton/</loc>
-    <lastmod>2020-06-05T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-10T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jakesingi.github.io/jake_singleton/post/project-2/</loc>
+    <lastmod>2020-07-10T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

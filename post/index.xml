@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>R Exercise: Estimating the Exponent in Pythagorean Expectation</title>
+      <link>https://jakesingi.github.io/jake_singleton/post/project-2/</link>
+      <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jakesingi.github.io/jake_singleton/post/project-2/</guid>
+      <description>Presents a walkthrough of estimating the exponent in the Pythagorean expectation formula for win percentage. In this case, we use NBA data.
+  Link to GitHub Repository</description>
+    </item>
+    
+    <item>
       <title>Stock Price Analysis Using Time Series!</title>
       <link>https://jakesingi.github.io/jake_singleton/post/project-1/</link>
       <pubDate>Fri, 05 Jun 2020 00:00:00 +0000</pubDate>

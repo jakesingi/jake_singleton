@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Jake Singleton</title>
+    <title>Posts on Jake Singleton</title>
     <link>https://jakesingi.github.io/jake_singleton/post/</link>
-    <description>Recent content in Projects on Jake Singleton</description>
+    <description>Recent content in Posts on Jake Singleton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate>
     
 	<atom:link href="https://jakesingi.github.io/jake_singleton/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fitness: The Ring Muscle-Up</title>
+      <link>https://jakesingi.github.io/jake_singleton/post/muscle-up/</link>
+      <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jakesingi.github.io/jake_singleton/post/muscle-up/</guid>
+      <description>Earlier today, I performed my first ring muscle-up. Finally achieving this movement is a huge accomplishment for me&amp;ndash;it only took 4.5 months of training, countless YouTube videos, many failed attempts, and several reddit posts to finally get. The ring muscle-up is an advanced calisthenics move in which you grip a pair of gymnastics rings with a false grip, perform a pull-up, transition into the lower part of a dip, and then press yourself up.</description>
+    </item>
     
     <item>
       <title>R Exercise: Estimating the Exponent in Pythagorean Expectation</title>

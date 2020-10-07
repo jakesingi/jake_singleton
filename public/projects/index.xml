@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Not So Normal on Jake Singleton</title>
-    <link>https://jakesingi.github.io/jake_singleton/</link>
-    <description>Recent content in Not So Normal on Jake Singleton</description>
+    <title>Data Science Portfolio on Jake Singleton</title>
+    <link>https://jakesingi.github.io/jake_singleton/projects/</link>
+    <description>Recent content in Data Science Portfolio on Jake Singleton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate>
     
-	<atom:link href="https://jakesingi.github.io/jake_singleton/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jakesingi.github.io/jake_singleton/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <guid>https://jakesingi.github.io/jake_singleton/projects/project-3/</guid>
       <description>Shows how to simulate the 2020 MLB regular season and postseason. Generates regular season and postseason results using the Bradley-Terry model, specifically utilizing Pythagorean win percentage as estimates of teams&amp;rsquo; true talent levels. Strengths and weaknesses of the model are examined. Easily adaptable to other season formats.
   Link to GitHub Repository</description>
-    </item>
-    
-    <item>
-      <title>Fitness: Ring Muscle-Up</title>
-      <link>https://jakesingi.github.io/jake_singleton/blog/muscle_up/</link>
-      <pubDate>Sat, 22 Aug 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jakesingi.github.io/jake_singleton/blog/muscle_up/</guid>
-      <description>Earlier today, I performed my first ring muscle-up. Finally achieving this movement is a huge accomplishment for me–it only took 4.5 months of training, countless YouTube videos, many failed attempts, and several reddit posts to finally get. The ring muscle-up is an advanced calisthenics move in which you grip a pair of gymnastics rings with a false grip, perform a pull-up, transition into the lower part of a dip, and then press yourself up.</description>
     </item>
     
     <item>
@@ -48,16 +39,6 @@
       <guid>https://jakesingi.github.io/jake_singleton/projects/project-1/</guid>
       <description>Demonstrates data science life cycle in the following steps:
  EDA (visualizations) Transforming the data Removing the trend from the stock price data Fitting an ARIMA model to the residuals Selecting best model by cross validation Making and analyzing predictions.    Link to GitHub Repository</description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>https://jakesingi.github.io/jake_singleton/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jakesingi.github.io/jake_singleton/contact/</guid>
-      <description>Feel free to reach out to me via social media or email!
-   Platform Link     Twitter: https://twitter.com/jakesingi   LinkedIn: https://www.linkedin.com/in/jake-singleton/   GitHub: https://github.com/jakesingi   Email: jake.singleton@berkeley.edu    </description>
     </item>
     
   </channel>

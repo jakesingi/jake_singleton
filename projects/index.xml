@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>R Exercise: Simulating the 2020 MLB Regular Season and Postseason</title>
+      <link>https://jakesingi.github.io/jake_singleton/projects/project-3/</link>
+      <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jakesingi.github.io/jake_singleton/projects/project-3/</guid>
+      <description>Shows how to simulate the 2020 MLB regular season and postseason. Generates regular season and postseason results using the Bradley-Terry model, specifically utilizing Pythagorean win percentage as estimates of teams&amp;rsquo; true talent levels. Strengths and weaknesses of the model are examined. Easily adaptable to other season formats.
+  Link to GitHub Repository</description>
+    </item>
+    
+    <item>
       <title>R Exercise: Estimating the Exponent in Pythagorean Expectation</title>
       <link>https://jakesingi.github.io/jake_singleton/projects/project-2/</link>
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>

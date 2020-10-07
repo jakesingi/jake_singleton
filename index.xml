@@ -6,10 +6,20 @@
     <description>Recent content in Not So Normal on Jake Singleton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Aug 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jakesingi.github.io/jake_singleton/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>R Exercise: Simulating the 2020 MLB Regular Season and Postseason</title>
+      <link>https://jakesingi.github.io/jake_singleton/projects/project-3/</link>
+      <pubDate>Wed, 07 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jakesingi.github.io/jake_singleton/projects/project-3/</guid>
+      <description>Shows how to simulate the 2020 MLB regular season and postseason. Generates regular season and postseason results using the Bradley-Terry model, specifically utilizing Pythagorean win percentage as estimates of teams&amp;rsquo; true talent levels. Strengths and weaknesses of the model are examined. Easily adaptable to other season formats.
+  Link to GitHub Repository</description>
+    </item>
     
     <item>
       <title>Fitness: Ring Muscle-Up</title>

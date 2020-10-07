@@ -3,14 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jakesingi.github.io/jake_singleton/blog/muscle_up/</loc>
-    <lastmod>2020-08-22T00:00:00+00:00</lastmod>
+    <loc>https://jakesingi.github.io/jake_singleton/</loc>
+    <lastmod>2020-10-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://jakesingi.github.io/jake_singleton/</loc>
+    <loc>https://jakesingi.github.io/jake_singleton/projects/project-3/</loc>
+    <lastmod>2020-10-07T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://jakesingi.github.io/jake_singleton/blog/muscle_up/</loc>
     <lastmod>2020-08-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

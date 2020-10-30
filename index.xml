@@ -6,10 +6,19 @@
     <description>Recent content in Not So Normal on Jake Singleton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 07 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jakesingi.github.io/jake_singleton/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Analyzing Margot&#39;s Attempted Steal of Home</title>
+      <link>https://jakesingi.github.io/jake_singleton/projects/project-4/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jakesingi.github.io/jake_singleton/projects/project-4/</guid>
+      <description>It&amp;rsquo;s World Series Game 5 with the series tied at 2. You&amp;rsquo;re standing on third with a teammate on first, you&amp;rsquo;re down by 1 in the bottom of the 4th with 2 outs, and future Hall of Famer Clayton Kershaw is on the mound. You&amp;rsquo;re a career 71% successful base stealer, and Kershaw&amp;rsquo;s back is to you as he brings his hands together above his head as he comes set. Do you steal home?</description>
+    </item>
     
     <item>
       <title>R Exercise: Simulating the 2020 MLB Regular Season and Postseason</title>

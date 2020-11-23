@@ -6,10 +6,20 @@
     <description>Recent content in Not So Normal on Jake Singleton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jakesingi.github.io/jake_singleton/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Four Factors: Statistics that Make College Basketball Teams Win</title>
+      <link>https://jakesingi.github.io/jake_singleton/projects/project-5/</link>
+      <pubDate>Sun, 22 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jakesingi.github.io/jake_singleton/projects/project-5/</guid>
+      <description>Calculates four factors for 30 NCAAMB teams from the 2019-2020 season. Teams are drawn from the 10 &amp;ldquo;high-major&amp;rdquo; conferences. Analysis features the use of linear regression to determine the importance of each factor. Results are compared to Dean Oliver and Wayne Winston&amp;rsquo;s NBA results. Data scraped from ESPN.
+  Link to GitHub Repository</description>
+    </item>
     
     <item>
       <title>Analyzing Margot&#39;s Attempted Steal of Home</title>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>2020 NFL Ratings... and Why Choice of Loss Function Matters | Jake Singleton</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.72.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="https://jakesingi.github.io/jake_singleton/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+<link rel="shortcut icon" href="https://jakesingi.github.io/jake_singleton/images/tab_logo.png" type="image/x-icon" />
+
+
+    
+
+    
+    
+    <meta property="og:title" content="2020 NFL Ratings... and Why Choice of Loss Function Matters" />
+<meta property="og:description" content="Created NFL Rankings for 2020 Season" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jakesingi.github.io/jake_singleton/projects/project-6/" />
+<meta property="article:published_time" content="2021-01-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-01-14T00:00:00+00:00" />
+<meta itemprop="name" content="2020 NFL Ratings... and Why Choice of Loss Function Matters">
+<meta itemprop="description" content="Created NFL Rankings for 2020 Season">
+<meta itemprop="datePublished" content="2021-01-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-01-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1366">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2020 NFL Ratings... and Why Choice of Loss Function Matters"/>
+<meta name="twitter:description" content="Created NFL Rankings for 2020 Season"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://jakesingi.github.io/jake_singleton/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Jake Singleton
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://jakesingi.github.io/jake_singleton/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://jakesingi.github.io/jake_singleton/projects/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://jakesingi.github.io/jake_singleton/blog/" title="Blog page">
+              Blog
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://jakesingi.github.io/jake_singleton/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+<a href="https://twitter.com/jakesingi" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+<a href="https://www.linkedin.com/in/jake-singleton/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/jakesingi" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        DATA SCIENCE PORTFOLIO
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://jakesingi.github.io/jake_singleton/projects/project-6/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://jakesingi.github.io/jake_singleton/projects/project-6/&amp;text=2020%20NFL%20Ratings...%20and%20Why%20Choice%20of%20Loss%20Function%20Matters" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://jakesingi.github.io/jake_singleton/projects/project-6/&amp;title=2020%20NFL%20Ratings...%20and%20Why%20Choice%20of%20Loss%20Function%20Matters" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">2020 NFL Ratings... and Why Choice of Loss Function Matters</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-01-14T00:00:00Z">January 14, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>In this project, I create 2020 NFL rankings based on the method described in <em>Mathletics</em> by Wayne Winston. I do so by
+scraping NFL game data in Python and creating team ratings using Microsoft Excel&rsquo;s Solver tool. The relevant Python code
+and Excel files are all included in the GitHub Repo so that the reader may play around with the ratings if they like. The code
+is also thoroughly commented so that he/she may change things around as appropriate, and the Excel formulas are all pretty straightforward.
+The goal of this post is to:</p>
+<ol>
+<li>Briefly outline how the rankings work</li>
+<li>Explain how they can be used to predict game results</li>
+<li>Note the importance of choice of loss function</li>
+</ol>
+<h3 id="1">1.</h3>
+<p>Below is the set of rankings I created by minimizing a sum of squared errors (more on what this means below). Teams are sorted by highest rating to lowest, and the interpretation is that
+a team&rsquo;s rating is the number of points by which they&rsquo;re better (or worse) than the completely average NFL team. So, for example, the Saints
+rating of 9.69 means they are 9.69 points better than the average NFL team. Why does this work? Because the average of
+all 32 ratings is 0.</p>
+<figure>
+    <img src="https://jakesingi.github.io/jake_singleton/images/sq_error_ranks.png"/> 
+</figure>
+
+<p>While Winston explains the ranking method in a much more detailed manner, the idea is pretty simple. We collect NFL game-by-game
+data and calculate the margin of victory for the home team. The example below comes from the csv nfl_game_data.csv in the data/
+folder.</p>
+<figure>
+    <img src="https://jakesingi.github.io/jake_singleton/images/margin_example.png"/> 
+</figure>
+
+<p>Once we have these margins, we create pilot ratings for each team. Think of these as guesses, or initial ratings. They could be anything (I generated them randomly in Python), but they must average to 0. We also input a trial home field advantage (3 is a good starting point). Next, given these ratings, we use them along with our home field advantage guess to create a predicted margin for each game. This prediction is predicted margin = home field advantage + home team rating - away team rating. In Excel, you will have to use VLOOKUP to make this work, and the reader can see the file nfl_rankings.xlsx for how I do it.</p>
+<p>The rest is pretty easy. Calculate the prediction error as error = actual margin - predicted margin for each game. Next, square the errors and take their sum.
+This sum is called the sum of squared errors (SSE). Now, all that needs to be done is use the Excel Solver to find the set of ratings that
+minimizes the SSE. This makes sense, right? If we can tweak the team ratings to make our predicted margins close to the actual margins, then our errors are small. This is what we want, and this is how I created these rankings. The image below is a screenshot of my Solver window, where cell K35 contains the &ldquo;objective&rdquo;, the SSE, C2:C33 include the team ratings, and F7 contains the home edge. The constraint in C34 is that the average of the ratings equals 0. This is easier to follow with the nfl_rankings.xlsx pulled up.</p>
+<figure>
+    <img src="https://jakesingi.github.io/jake_singleton/images/solver.png"/> 
+</figure>
+
+<h3 id="2">2.</h3>
+<p>So, now that we have team ratings, how are they useful? We can actually use them to forecast future games, and let&rsquo;s do so for this weekend&rsquo;s playoff games. It&rsquo;s really easy: our predictions are home team margin of victory = home field advantage + home team rating - away team rating.
+A negative number means we predict the home team to lose, while a positive one means we predict the home team to win. Let&rsquo;s see this in action using the above ratings. (Note that home field advantage is worth essentially 0 points).</p>
+<p><strong>2020 Divisional Round Predictions</strong></p>
+<p><strong>Game 1</strong>; LAR @ GB: GB margin of victory = 0 + 7.64 - 5.91 = 1.73.
+<strong>Game 2</strong>; BAL @ BUF: BUF margin of victory = 0 + 7.55 - 8.31 = -0.36.
+<strong>Game 3</strong>; CLE @ KC: KC margin of victory = 0 + 6.79 - (-1.63) = 8.42.
+<strong>Game 4</strong>; TB @ NO: NO margin of victory = 0 + 9.70 - 9.28 = 0.42.</p>
+<p>We should get some pretty good games this weekend!</p>
+<h3 id="3">3.</h3>
+<p>In this section, I&rsquo;ll say a bit about my biggest takeaway from this mini-project: choice of loss function matters. But first, what&rsquo;s a loss function? In one sentence, it&rsquo;s our sense of error&ndash;our sense of how far our prediction varies from the actual result. And we can choose it! The importance of one&rsquo;s choice of loss function is one of the first things we learn in a modeling class, but it can feel a bit abstract. This project has been illuminating for me because it has revealed some concrete examples of this, so here goes.</p>
+<p>In the above rankings, it might be surprising that CLE, a playoff team(!), comes in at 20th overall. How could this be?! They&rsquo;re supposed to be good. The key part: if one examines CLE&rsquo;s schedule this year, he/she might notice a couple blowout losses: in Week 1, they lost 38-6 to BAL, and in Week 6, they lost 38-7 to PIT&hellip; revenge is sweet. These blowout losses mean that the actual margin and predicted margin vary greatly, thereby contributing to a large error. This is where the loss function comes in. As I noted earlier, we SQUARE each error because our loss function is the <em>squared loss</em>. So this error gets blown up to something really big. For this reason, CLE gets penalized very hard for these bad losses, and the optimal solution will therefore rank them low.</p>
+<p>Okay, that makes sense, but what can we do about it? A common alternative is to use the <em>absolute loss</em>, meaning we take the <em>absolute value</em> of the error instead of its square. So, instead of minimizing the sum of <em>squared</em> errors, we minimize the sum of <em>absolute</em> errors. Doing so yields the following rankings.</p>
+<figure>
+    <img src="https://jakesingi.github.io/jake_singleton/images/abs_error_ranks.png"/> 
+</figure>
+
+<p>Suddenly, CLE has jumped from 20th to 16th, which makes more sense. (I know there are some other teams who&rsquo;ve moved a lot, but let&rsquo;s focus on CLE). Again, the upshot here is that, under the absolute loss, blowout losses will not lead to massive penalties like they will under the squared loss.</p>
+<p>Last, another approach is to stick with the squared loss but remove these &ldquo;outlier&rdquo; games. The rankings below are generated from the set of games with CLE&rsquo;s Week 1 and Week 6 blowouts removed along with their Week 16 game that they played without their entire WR core. I also removed PIT&rsquo;s and KC&rsquo;s Week 17 games, as PIT rested Big Ben and KC did not play their starters.</p>
+<figure>
+    <img src="https://jakesingi.github.io/jake_singleton/images/sq_error_games_removed.png"/> 
+</figure>
+
+<p>Wow, the Browns are all the way up to 11 now. In addition, note that although I removed PIT&rsquo;s Week 17 contest, they actually dropped a spot and their rating decreased since their blowout <em>victory</em> versus CLE in Week 6 was removed&hellip; so they are rewarded much less. As for KC, they acheive their highest ranking of all three sets of rankings at 3rd overall.</p>
+<p>Visually, to see the importance of loss function, here is a plot that shows the biggest &ldquo;jumps&rdquo; from teams based on whether the squared or absolute loss was used. To make the plot, a jump greater than 5 was required. Remember that a lower rank is better.</p>
+<figure>
+    <img src="https://jakesingi.github.io/jake_singleton/images/big_jumps.png"/> 
+</figure>
+
+<p>That&rsquo;s it! I will leave my offense and defense rankings here as well, but the reader will have to read <em>Mathletics</em> to see how they work. They really work the same way, but instead of the error being margin of victory, the error includes points scored and points allowed terms. Finally, the Jupyter Notebooks provided in the GitHub Repo include more instructions and discussion (especially nfl_loss_func_analysis.ipynb), but this wall of text is enough for here.</p>
+<figure>
+    <img src="https://jakesingi.github.io/jake_singleton/images/sq_error_off_def_ranks.png"/> 
+</figure>
+
+<ul>
+<li><a href="https://github.com/jakesingi/nfl_rankings">Link to GitHub Repository</a>
+<ul>
+<li>In /code/ folder:
+<ul>
+<li>nfl_ratings.ipynb (scrapes game-by-game data, calculates margin of victory)</li>
+<li>nfl_loss_func_analysis.ipynb (reads in rankings from Excel, plots visualizations, and discusses ramifications of loss function choice)</li>
+</ul>
+</li>
+<li>In /data/ folder:
+<ul>
+<li>nfl_game_data.csv (the csv exported by nfl_ratings.ipynb that contains game-by-game data)</li>
+<li>nfl_rankings.xlsx (all of my ratings and rankings in several Excel sheets)</li>
+<li>team_ids_and_ratings.csv (file of team names, team ID numbers, and <strong>pilot</strong> ratings)</li>
+</ul>
+</li>
+<li>In /images/ folder: images of my rankings, the Excel solver window, and more</li>
+</ul>
+</li>
+</ul>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://jakesingi.github.io/jake_singleton/" >
+    &copy;  Jake Singleton 2021 
+  </a>
+    <div>
+
+
+
+
+<a href="https://twitter.com/jakesingi" target="_blank" class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel="noopener" aria-label="follow on Twitter——Opens in a new window">
+  <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+<a href="https://www.linkedin.com/in/jake-singleton/" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/jakesingi" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="https://jakesingi.github.io/jake_singleton/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

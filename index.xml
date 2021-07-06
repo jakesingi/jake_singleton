@@ -6,10 +6,20 @@
     <description>Recent content in Not So Normal on Jake Singleton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Jul 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jakesingi.github.io/jake_singleton/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tennis Ruminations &#43; Wimbledon Preview</title>
+      <link>https://jakesingi.github.io/jake_singleton/projects/project-7/</link>
+      <pubDate>Tue, 06 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://jakesingi.github.io/jake_singleton/projects/project-7/</guid>
+      <description>Current tennis broadcasts are loaded with statistics, and it&amp;rsquo;s often hard to decipher which are most important. For example, we see graphics like the one here:
+  We also see mid-match graphics, such as player tiebreak records when the match is headed for a tiebreak. (This one has always been a head-scratcher for me in particular, as I&amp;rsquo;ve wondered if tiebreak history is actually a good predictor of future tiebreak performance).</description>
+    </item>
     
     <item>
       <title>2020 NFL Ratings... and Why Choice of Loss Function Matters</title>

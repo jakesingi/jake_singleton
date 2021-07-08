@@ -38,7 +38,7 @@
 <meta itemprop="description" content="Tennis Ruminations">
 <meta itemprop="datePublished" content="2021-07-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2021-07-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1524">
+<meta itemprop="wordCount" content="1621">
 
 
 
@@ -296,8 +296,12 @@ The R-squared value for DF% is: 0.07911118796404037
 The coefficient is: [-2.24684786]
 The intercept is: 0.674501827149806
 </code></pre>
-<p>From these regressions it&rsquo;s evident that the cost of giving a free point far outweighs the benefit of getting a free point. An increase in ace rate of 1% is associated with only a 0.24% increase in match win rate, while a 1% increase in double fault rate contributes to 2.2% fewer wins on average. By dividing the magnitude of the coefficients, we see DF% is almost 4x more important than Ace%. Hence, if one wants to hit more aces, they need to maintain at least a 4:1 ace to double fault ratio to make it worth the gamble.</p>
-<p>Note that there is selection bias present here with the inclusion of huge servers like John Isner and Reilly Opelka. These players naturally hit a ton of aces because of their height, but their extreme stature hinders them in other areas of the game. Hence, a more &ldquo;normal&rdquo; player would likely see better results from hitting more aces than this analysis indicates.</p>
+<p>From these regressions it&rsquo;s evident that the cost of giving a free point far outweighs the benefit of getting a free point. An increase in ace rate of 1% is associated with only a 0.24% increase in match win rate, while a 1% increase in double fault rate contributes to 2.2% fewer wins on average. In fact, running a multiple linear regression with match win rate as our dependent variable and double fault and ace rates as our independent variables hammers this point home even further:</p>
+<pre><code>The R-squared value is: 0.1022072987938265
+The coefficients are: [-2.48182332  0.39043974]
+The intercept is: 0.6502089893838514
+</code></pre>
+<p>By dividing the magnitude of the coefficients, we see DF% is around 6x more important than Ace%. Note that there is selection bias present here with the inclusion of huge servers like John Isner and Reilly Opelka. These players naturally hit a ton of aces because of their height, but their extreme stature hinders them in other areas of the game. Hence, a more &ldquo;normal&rdquo; player would likely see better results from hitting more aces than this analysis indicates.</p>
 <p>Now for our final table, which shows Wimbledon quarterfinalist DF%:</p>
 <figure>
     <img src="https://jakesingi.github.io/jake_singleton/images/tennis_dfs/df6.png"/> 
@@ -312,6 +316,7 @@ The intercept is: 0.674501827149806
 <ul>
 <li><a href="https://github.com/jakesingi/tennis">Link to GitHub Repository (Python code in Jupyter Notebook)</a></li>
 </ul>
+<p><em>Edit: An earlier version of this article wrote under question 4: &ldquo;By dividing the magnitude of the coefficients (from separate simple regressions), we see DF% is almost 4x more important than Ace%. Hence, if one wants to hit more aces, they need to maintain at least a 4:1 ace to double fault ratio to make it worth the gamble.&rdquo; This was incorrect since we should only interpret relative importance when using multiple linear regression. This has been corrected above.</em></p>
 <ul class="pa0">
   
 </ul>

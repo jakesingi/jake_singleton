@@ -6,10 +6,20 @@
     <description>Recent content in Not So Normal on Jake Singleton</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 06 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 18 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jakesingi.github.io/jake_singleton/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>2021 MLB Markov Chains for Run Scoring</title>
+      <link>https://jakesingi.github.io/jake_singleton/projects/mlb-home-advantage/</link>
+      <pubDate>Fri, 18 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://jakesingi.github.io/jake_singleton/projects/mlb-home-advantage/</guid>
+      <description>In this project I model transitions between base-out states with Markov chains. I use 2021 MLB regular season data and repeatedly simulate half innings to create run distributions for all 24 base-out states. I discuss run expectancy and decision-making in baseball. Ultimately, I find two different Markov chains&amp;ndash;one for home teams and the other for away teams&amp;ndash;and estimate home field advantage to be half a run.
+   Link to PDF Report Link to GitHub Repository  </description>
+    </item>
     
     <item>
       <title>Tennis Ruminations &#43; Wimbledon Preview</title>
